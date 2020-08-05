@@ -19,7 +19,7 @@
                         <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true" (closed)="panelOpenState = false" formArrayName="children" *ngFor="let secondLevel of firstLevel.get('children')['controls'];let iSecond = index">
                             <mat-expansion-panel-header>
                                 <div class="accordion-heading-container" [formGroupName]="iSecond">
-                                    <mat-panel-title>
+                                    <mat-panel-title color="primary">
                                         {{secondLevel.get('name').value}}
                                     </mat-panel-title>
                                 </div>

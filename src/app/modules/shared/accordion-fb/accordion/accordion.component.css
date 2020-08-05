@@ -5,7 +5,7 @@
 .accordion-heading-container {
     display: flex;
     align-items: center;
-    width: 10%;
+    width: 12%;
 }
 
 mat-form-field {
@@ -18,21 +18,23 @@ mat-panel-title {
 }
 
 .accordion-description-container1 {
-    width: 90%;
+    width: 88%;
 }
 
 .accordion-description-container2 {
-    width: 94%;
+    width: 88%;
 }
 
 .accordion-description-container3 {
-    width: 97%;
+    width: 88%;
 }
 
 .level4-accordion-cotainer {
     display: flex;
 }
-
+.child-accordion-container2{
+    padding-left: 7px;;
+}
 .level4-left-continer {
     display: flex;
     align-items: center;
@@ -74,4 +76,8 @@ mat-panel-title {
 .last-child {
     background: #F9F9F9;
     box-shadow: 0px;
+}
+app-accordion-content{
+    overflow: auto;
+
 }

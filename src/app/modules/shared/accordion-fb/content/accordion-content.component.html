@@ -1,6 +1,6 @@
 <div class="input-field-container" [formGroup]="form">
-    <div class="mat-input-selector row">
-        <div class="col" formArrayName="columns" *ngFor="let column of form.get('columns')['controls'];let i = index">
+    <div class="mat-input-selector">
+        <div class="inner-input-selector" formArrayName="columns" *ngFor="let column of form.get('columns')['controls'];let i = index">
             <mat-form-field appearance="legacy" [formGroupName]="i">
                 <mat-label>{{column.get('key').value | titlecase}}</mat-label>
                 <input matInput (click)="stopEvent($event)" [errorStateMatcher]="matcher" formControlName="value" placeholder="Enter">

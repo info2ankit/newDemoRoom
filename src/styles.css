@@ -36,3 +36,12 @@ input::placeholder {
 .mat-input-element {
     color: #008563;
 }
+.mat-expansion-panel-body{
+    padding: 0 !important;
+}
+.mat-expansion-panel-header{
+    padding: 0 !important;
+}
+.mat-expansion-panel-header{
+    padding-left: 7px !important;
+}

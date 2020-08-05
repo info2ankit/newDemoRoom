@@ -17,17 +17,17 @@ mat-panel-title {
     padding-top: 17px;
 }
 
-.accordion-description-container1 {
+/* .accordion-description-container1 {
     width: 90%;
-}
+} */
 
-.accordion-description-container2 {
+/* .accordion-description-container2 {
     width: 94%;
 }
 
 .accordion-description-container3 {
     width: 97%;
-}
+} */
 
 .level4-accordion-cotainer {
     display: flex;
@@ -49,3 +49,17 @@ mat-panel-title {
 .input-field-container {
     width: 100%;
 }
+.mat-input-selector{
+    display: flex;
+}
+.mat-input-selector .inner-input-selector{
+    margin-right: 5px;
+}
+.mat-input-selector div{
+    width: 13.9%;
+}
+@media only screen and (max-width: 1280px) {
+    .mat-input-selector div {
+        width: 13.5%;
+    }
+  }
