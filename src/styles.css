@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-expansion-panel-body {
+    padding: 8px !important;
+}
+
+.mat-expansion-panel-header {
+    padding: 0 10px !important;
+    height: 71px !important;
+}
+
+.mat-expansion-panel-header>.mat-content {
+    padding-left: 12px;
+    padding-bottom: 10px;
+}
+
+.mat-form-field-label {
+    font-size: 12px!important;
+}
+
+input::placeholder {
+    font-size: 12px;
+}
+
+.mat-input-element {
+    color: #008563;
+}

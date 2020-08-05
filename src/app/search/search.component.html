@@ -1,0 +1,15 @@
+<div class="container">
+<form autocomplete="off">
+  <div class="row">
+    <div class="col-lg-4">
+        <app-search-job-group (jobGroupSearch)="setJobSearchData($event)"></app-search-job-group>
+    </div>
+    <div class="col-lg-4">
+        <app-search-job-profession (professionCodeEmitter)="setJobProfesssionData($event)" [jobDetails]=jobProfessionData></app-search-job-profession>
+    </div>
+    <div class="col-lg-4">
+      <button class="btn btn-primary" (click)="populateSearchField()">Search</button>
+  </div>
+  </div>
+</form>
+</div>

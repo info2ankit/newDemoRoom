@@ -1,0 +1,13 @@
+<div class="input-field-container" [formGroup]="form">
+    <div class="mat-input-selector row">
+        <div class="col" formArrayName="columns" *ngFor="let column of form.get('columns')['controls'];let i = index">
+            <mat-form-field appearance="legacy" [formGroupName]="i">
+                <mat-label>{{column.get('key').value | titlecase}}</mat-label>
+                <input matInput (click)="stopEvent($event)" [errorStateMatcher]="matcher" formControlName="value" placeholder="Enter">
+                <span matPrefix>{{column.get('label').value}}&nbsp;</span>
+                <mat-error *ngIf="column.get('value').errors?.max" class="text-danger small" mb-0>Value should be equal or less than {{column.get('value').errors?.max?.max}}</mat-error>
+                <mat-error *ngIf="column.get('value').errors?.pattern" class="text-danger small" mb-0>Value should be in numbers</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+</div>

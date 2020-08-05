@@ -1,0 +1,68 @@
+<div class="mat-accordion-table">
+    <form [formGroup]="form" (ngSubmit)="formSubmit()">
+        <mat-accordion>
+            <mat-expansion-panel formArrayName="groups" *ngFor="let firstLevel of form.get('groups')['controls'];let iFirst = index" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header [formGroupName]="iFirst">
+                    <div class="accordion-heading-container">
+                        <mat-panel-title>
+                            <span class="parent-title">{{firstLevel.get('name').value}}</span>
+                        </mat-panel-title>
+                    </div>
+                    <div class="accordion-description-container1">
+                        <mat-panel-description>
+                            <app-accordion-content [form]="firstLevel"></app-accordion-content>
+                        </mat-panel-description>
+                    </div>
+                </mat-expansion-panel-header>
+                <div class="child-accordion-container" *ngIf="firstLevel.get('children').value.length" [formGroupName]="iFirst">
+                    <mat-accordion>
+                        <mat-expansion-panel class="mat-elevation-z0" (opened)="panelOpenState = true" (closed)="panelOpenState = false" formArrayName="children" *ngFor="let secondLevel of firstLevel.get('children')['controls'];let iSecond = index">
+                            <mat-expansion-panel-header>
+                                <div class="accordion-heading-container" [formGroupName]="iSecond">
+                                    <mat-panel-title>
+                                        {{secondLevel.get('name').value}}
+                                    </mat-panel-title>
+                                </div>
+                                <div class="accordion-description-container2" [formGroupName]="iSecond">
+                                    <mat-panel-description>
+                                        <app-accordion-content [form]="secondLevel"></app-accordion-content>
+                                    </mat-panel-description>
+                                </div>
+                            </mat-expansion-panel-header>
+                            <div class="child-accordion-container2" [formGroupName]="iSecond">
+                                <mat-accordion *ngIf="secondLevel.get('children').value.length">
+                                    <mat-expansion-panel class="mat-elevation-z0" formArrayName="children" [disabled]="!secondLevel.get('children').value[0].children.length" class="last-child" *ngFor="let thirdLevel of secondLevel.get('children')['controls'];let iThird = index" (opened)="panelOpenState = true"
+                                        (closed)="panelOpenState = false">
+                                        <mat-expansion-panel-header>
+                                            <div class="accordion-heading-container">
+                                                <mat-panel-title>
+                                                    {{thirdLevel.get('name').value}}
+                                                </mat-panel-title>
+                                            </div>
+                                            <div class="accordion-description-container3" [formGroupName]="iThird">
+                                                <mat-panel-description>
+                                                    <app-accordion-content [form]="thirdLevel"></app-accordion-content>
+                                                </mat-panel-description>
+                                            </div>
+                                        </mat-expansion-panel-header>
+                                        <div *ngIf="thirdLevel.get('children').value && thirdLevel.get('children').value.length" [formGroupName]="iThird">
+                                            <div class="level4-accordion-cotainer" formArrayName="children" *ngFor="let fourthLevel of thirdLevel.get('children')['controls'];let iFourth = index">
+                                                <div class="level4-left-continer" [formGroupName]="iFourth">
+                                                    <div class="level4=header">{{fourthLevel.get('name').value}}</div>
+                                                </div>
+                                                <div class="level4-right-continer" [formGroupName]="iFourth">
+                                                    <app-accordion-content [form]="thirdLevel"></app-accordion-content>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-expansion-panel>
+                                </mat-accordion>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+
+    </form>
+</div>

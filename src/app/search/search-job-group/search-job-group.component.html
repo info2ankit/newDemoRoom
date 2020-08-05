@@ -1,0 +1,6 @@
+<input type="text" id="gsearchsimple" class="form-control input" placeholder="Search Job Group" name="searchField"
+  (keyup)="search($event)" [value]="searchValue" />
+<ul class="list-group" *ngIf="!hideAutoSuggestion">
+  <li class="list-group-item contsearch" *ngFor="let jobGroup of uniqueJobGroups" (click)="populateSearchField(jobGroup)">
+    <a class="gsearch">{{ jobGroup }}</a></li>
+</ul>
