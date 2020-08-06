@@ -28,7 +28,7 @@ export class AccordionComponent implements OnInit {
   ngOnInit(): void {
     let dataSrting1 =
       '[{"id":":company:office:","name":"bbgenerric(Office Level)","children":[{"id":":company:office:team:","name":"bbgenerric(Team Level)","children":[{"id":":company:office:team:userone:","name":"Dave Test Corp"}]}]},{"id":":company:office1:","name":"London(Office Level)","children":[{"id":":company:office:team1:","name":"Guiter(Team Level)","children":[{"id":":company:office:team:userone1:","name":"Bert Jansch"}]},{"id":":company:office:team2:","name":"Tech(Team Level)","children":[{"id":":company:office:team:userone2:","name":"Bert Jansch"},{"id":":company:office:team:userone3:","name":"Chris p "},{"id":":company:office:team:userone4:","name":"Dave Scott"},{"id":":company:office:team:userone5:","name":"Gaurav Kumar"}]}]}]';
-    let dataSrting2 =
+      let dataSrting2 =
       '[{"id":":company:","name":"company Name","children":[{"id":":company:office:","name":"Office Name","children":[{"id":":company:office:team:","name":"Team Name","children":[{"id":":company:office:team:userone:","name":"User One"},{"id":":company:office:team:usertwo:","name":"User Two"}]}]},{"id":":company:office1:","name":"Office Name1","children":[{"id":":company:office:team1:","name":"Team Name1","children":[{"id":":company:office:team:userone1:","name":"User One1"},{"id":":company:office:team:usertwo1:","name":"User Two1"}]}]}]}]';
     let dataSrting3 =
       '[{"id":":company:office:","name":"bbgenerric(Office Level)","value":"10","children":[{"id":":company:office:team:","name":"bbgenerric(Team Level)","value":"12","childern":[{"id":":company:office:team:userone:","name":"Dave Test Corp"}]}]}]';
