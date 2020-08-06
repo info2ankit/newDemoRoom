@@ -81,3 +81,28 @@ app-accordion-content{
     overflow: auto;
 
 }
+.top-header-container{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+.mat-input-selector div{
+    width: 13.9%;
+}
+@media only screen and (max-width: 1280px) {
+    .mat-input-selector div {
+        width: 13.5%;
+    }
+  }
+.header-expansion-conatiner{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+.header-panel-tile{
+    font-weight: bold;
+    padding-top: 0 !important;
+}
+.left-header{
+    font-size: 14px;
+}

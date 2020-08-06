@@ -1,6 +1,32 @@
 <div class="mat-accordion-table">
     <form [formGroup]="form" (ngSubmit)="formSubmit()">
         <mat-accordion>
+            <mat-expansion-panel class="header-expansion-conatiner" (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false" disabled>
+                <mat-expansion-panel-header>
+                <div class="accordion-heading-container">
+                    <mat-panel-title class="header-panel-tile">
+                        <div class="left-header">Main Header</div>
+                    </mat-panel-title>
+                </div>
+                <div class="accordion-description-container1">
+                    <mat-panel-description>
+                        <div class="input-field-container" [formGroup]="form">
+                            <div class="mat-input-selector top-header-container">
+                                <div class="header-one">Header 1</div>
+                                <div class="header-one">Header 2</div>
+                                <div class="header-one">Header 3</div>
+                                <div class="header-one">Header 4</div>
+                                <div class="header-one">Header 5</div>
+                                <div class="header-one">Header 6</div>
+                                <div class="header-one">Header 7</div>
+                            </div>
+                        </div>
+                    </mat-panel-description>
+                </div>
+                
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
             <mat-expansion-panel formArrayName="groups" *ngFor="let firstLevel of form.get('groups')['controls'];let iFirst = index" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
                 <mat-expansion-panel-header [formGroupName]="iFirst">
                     <div class="accordion-heading-container">
